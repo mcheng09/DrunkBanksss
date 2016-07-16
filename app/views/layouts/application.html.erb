@@ -6,13 +6,12 @@
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
 
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
   <%= csrf_meta_tags %>
 
@@ -21,30 +20,28 @@
 <body>
   <nav>
     <div class="nav-wrapper">
-      <a href="/" class="brand-logo center">Foodie Bomb!</a>
-      <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <% if current_user %>
-        <li><%= link_to "Log Out", logout_path, :method => :delete %></li>
-        <% else %>
-        <li><a href="/users">Users#Index</a></li>
-        <li><a href="/signup">Sign Up!</a></li>
-        <li><a href="/login">Login!</a></li>
-        <% end %>
+      <a href="/" class="brand-logo">Drunk Bank!</a>
+      <a href="/" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/login">Login</a></li>
+        <li><a href="/signup">Signup</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="/login">Login</a></li>
+        <li><a href="/signup">Signup</a></li>
       </ul>
     </div>
   </nav>
-
   <%= yield %>
 
   <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
 
   <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 
   <!--Import jQuery before materialize.js-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
 </body>
 </html>

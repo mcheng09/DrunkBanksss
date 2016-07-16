@@ -4,10 +4,6 @@ class UsersController < ApplicationController
     render :splash
   end
 
-  def index
-    render :index
-  end
-
   def new
     @user = User.new
     render :new
