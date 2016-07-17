@@ -30,8 +30,7 @@
 }
 
 .nav-wrapper {
-  background: linear-gradient(bottom, rgba(128,128,128,.8), rgba(128,128,128,.8));
-  background: -webkit-linear-gradient(bottom, rgba(128,128,128,.8), rgba(128,128,128,.8));
+  background: #292E37;
 }
 
 .newForm {
@@ -52,4 +51,10 @@
   color: black;
   background: linear-gradient(bottom, rgba(176,196,222,.8), rgba(176,196,222,.8));
   background: -webkit-linear-gradient(bottom, rgba(176,196,222,.8), rgba(176,196,222,.8));
+}
+
+.showPage {
+  border-radius: 24px;
+  background: linear-gradient(bottom, rgba(128,128,128,.8), rgba(128,128,128,.8));
+  background: -webkit-linear-gradient(bottom, rgba(128,128,128,.8), rgba(128,128,128,.8));
 }
