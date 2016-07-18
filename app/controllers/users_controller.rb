@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
 
   def splash
-    render :splash
+    if !current_user
+      render :splash
+    else
+      redirect_to "/users/#{current_user.id}"
+    end
   end
 
   def new
