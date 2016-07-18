@@ -21,6 +21,11 @@ class BetsController < ApplicationController
     render :show
   end
 
+  def edit
+    @bet = Bet.find(params[:id])
+    render :edit
+  end
+
   private
 
   def bet_params
