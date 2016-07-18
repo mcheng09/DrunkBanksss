@@ -21,5 +21,6 @@ Rails.application.routes.draw do
   get "/bets", to: "bets#index", as: "bets"
   get "/bets/new", to: "bets#new", as: "new_bet"
   post "/bets", to: "bets#create"
+  get "/bets/:id/edit", to: "bets#edit", as: "edit_bet"
 
 end
