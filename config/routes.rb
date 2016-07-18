@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#delete"
 
   # Bets Routes
-  get "/bets", to: "bets#show", as: "bets"
+  get "/bets", to: "bets#index", as: "bets"
+  get "/bets/new", to: "bets#new", as: "new_bet"
+  post "/bets", to: "bets#create"
 
 end
