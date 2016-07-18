@@ -1,5 +1,7 @@
-
+<h1> List of all Bets </h1>
 <% @bet.each do |bet| %>
+<div class="row">
+  <div class="col s12" style="background: yellow">
 <div>
 <%= bet.name %>
 </div>
@@ -8,5 +10,7 @@ $<%= bet.amount %>
 </div>
 <div>
 <%= bet.description %>
+</div>
+</div>
 </div>
 <% end %>
