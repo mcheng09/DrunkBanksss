@@ -1,0 +1,26 @@
+
+New Bets
+
+<div class="container row" style="color: black">
+  <div class="col s6 offset-s3 newForm">
+<%= form_for @bet do |f| %>
+<h4 style="text-align: center"> Place a bet! </h4>
+<div>
+  <%= f.text_field :name, placeholder: "Name" %>
+</div>
+
+<div>
+  <%= f.text_field :amount, placeholder: "Amount" %>
+</div>
+
+<div>
+  <%= f.text_field :description, placeholder: "Description" %>
+</div>
+
+<div>
+  <%= f.submit %>
+</div>
+
+<% end %>
+</div>
+</div>
