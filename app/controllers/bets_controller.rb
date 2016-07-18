@@ -36,6 +36,15 @@ class BetsController < ApplicationController
     end
   end
 
+  def delete
+    @bet = Bet.find(params[:id])
+    if @bet.destroy
+      redirect_to bets_path
+    else
+      redirect_to bet_path(@bet[:id])
+    end
+  end
+
   private
 
   def bet_params

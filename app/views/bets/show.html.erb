@@ -9,3 +9,11 @@
 <div>
   <strong>Description: </strong><%= @bet.description %>
 </div>
+
+<div>
+  <form action='/bets/<%= @bet.id %>/edit' method='get'>
+    <button> Edit Bet </button>
+  </form>
+</div>
+
+<%= button_to "Delete Bet", bet_path(@bet.id), method: :delete %>

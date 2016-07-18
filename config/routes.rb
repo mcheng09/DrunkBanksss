@@ -19,9 +19,10 @@ Rails.application.routes.draw do
   # Bets Routes
   get "/bets/:id", to: "bets#show", as: "bet"
   get "/bets", to: "bets#index", as: "bets"
-  get "/bets/new", to: "bets#new", as: "new_bet"
+  get "/newbet", to: "bets#new", as: "new_bet"
   post "/bets", to: "bets#create"
   get "/bets/:id/edit", to: "bets#edit", as: "edit_bet"
   patch "/bets/:id", to: "bets#update"
+  delete "/bets/:id", to: "bets#delete"
 
 end
