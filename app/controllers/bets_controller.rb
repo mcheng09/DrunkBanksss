@@ -1,6 +1,7 @@
 class BetsController < ApplicationController
 
   def index
+    @user = current_user
     @bet = Bet.all
     render :index
   end
@@ -11,7 +12,8 @@ class BetsController < ApplicationController
   end
 
   def create
-    @bet = Bet.new(bet_params)
+    @user = current_user
+    @bet = Bet.new({name: bet_params[:name], description: bet_params[:description], amount: bet_params[:amount], user_id: @user[:id]})
     @bet.save
     redirect_to bets_path
   end
