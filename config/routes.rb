@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
   root to: "users#splash"
+  get "/", to: "users#splash", as: "splash"
 
   # User Routes
-  get "/", to: "users#splash", as: "splash"
   get "/users/:id", to: "users#show", as: "user"
   get "/signup", to: "users#new", as: "new_user"
   post "/users", to: "users#create"
@@ -15,5 +15,8 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new", as: "login"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#delete"
+
+  # Bets Routes
+  get "/bets", to: "bets#show", as: "bets"
 
 end
