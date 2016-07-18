@@ -22,5 +22,6 @@ Rails.application.routes.draw do
   get "/bets/new", to: "bets#new", as: "new_bet"
   post "/bets", to: "bets#create"
   get "/bets/:id/edit", to: "bets#edit", as: "edit_bet"
+  patch "/bets/:id", to: "bets#update"
 
 end
