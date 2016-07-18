@@ -16,6 +16,11 @@ class BetsController < ApplicationController
     redirect_to bets_path
   end
 
+  def show
+    @bet = Bet.find(params[:id])
+    render :show
+  end
+
   private
 
   def bet_params
