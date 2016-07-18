@@ -10,10 +10,15 @@
 
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <%= include_uploadcare_widget_from_cdn version: "2.9.0", min: true %>
+  <%= uploadcare_settings %>
+
+  <!-- uploadcare -->
+  <script>UPLOADCARE_PUBLIC_KEY = "b87de74d4f4e35f8c03e";</script>
+  <script src="https://ucarecdn.com/widget/2.9.0/uploadcare/uploadcare.full.min.js" charset="utf-8"></script>
 
 </head>
 
@@ -23,12 +28,20 @@
       <a href="/" class="brand-logo">Drunk Bank!</a>
       <a href="/" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
+        <% if current_user %>
+        <li><%= link_to "Log Out", logout_path, :method => :delete %></li>
+        <% else %>
         <li><a href="/login">Login</a></li>
         <li><a href="/signup">Signup</a></li>
+        <% end %>
       </ul>
       <ul class="side-nav" id="mobile-demo">
+        <% if current_user %>
+        <li><%= link_to "Log Out", logout_path, :method => :delete %></li>
+        <% else %>
         <li><a href="/login">Login</a></li>
         <li><a href="/signup">Signup</a></li>
+        <% end %>
       </ul>
     </div>
   </nav>
