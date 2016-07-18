@@ -14,3 +14,21 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+UPLOADCARE_LOCALE = 'en';
+UPLOADCARE_LOCALE_TRANSLATIONS = {
+  buttons: {
+    cancel: 'Cancel',
+    remove: 'Remove',
+    choose: {
+      files: {
+        one: 'Profile Picture',
+        other: 'Profile Picture'
+      },
+      images: {
+        one: 'Choose an image',
+        other: 'Choose images'
+      }
+    }
+  }
+};
