@@ -32,6 +32,9 @@ gem 'cancancan'
 # Uploadcare gem
 gem 'uploadcare-rails'
 
+# Pry gem
+gem 'pry'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
