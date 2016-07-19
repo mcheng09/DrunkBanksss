@@ -3,19 +3,29 @@
     <img class = 'image' src="<%= @user.image_url %>" onerror="this.src='https://s31.postimg.org/88bcsumi3/IMG_5552.jpg';" width='150px'>
   </div>
   <div class="col s4">
+    <div>
+      <strong>Username: </strong><%= @user.user_name %>
+    </div>
+    <div>
+      <strong>First Name: </strong><%= @user.first_name %>
+    </div>
+    <div>
+      <strong>Last Name: </strong><%= @user.last_name %>
+    </div>
+    <div>
+      <strong>Email: </strong><%= @user.email %>
+    </div>
+  </div>
+</div>
 
-<div>
-  <strong>Username: </strong><%= @user.user_name %>
-</div>
-<div>
-  <strong>First Name: </strong><%= @user.first_name %>
-</div>
-<div>
-  <strong>Last Name: </strong><%= @user.last_name %>
-</div>
-<div>
-  <strong>Email: </strong><%= @user.email %>
-</div>
-</div>
 
+<% @bet.each do |bet| %>
+<div class="container row showPage">
+  <div class="col s8 offset-s2">
+    Title: <%= bet.name %> </br>
+    Amount: $<%= bet.amount %> </br>
+    Description: <%= bet.description %> </br>
+    Bet by: <%= bet.user.first_name %> <%= bet.user.first_name %>
+  </div>
 </div>
+<% end %>
