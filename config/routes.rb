@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   # User Routes
   get "/users/:id", to: "users#show", as: "user"
+  get "/users", to: "users#index", as: "users"
   get "/signup", to: "users#new", as: "new_user"
   post "/users", to: "users#create"
   get "/users/:id/edit", to: "users#edit", as: "edit_user"
@@ -24,5 +25,7 @@ Rails.application.routes.draw do
   get "/bets/:id/edit", to: "bets#edit", as: "edit_bet"
   patch "/bets/:id", to: "bets#update"
   delete "/bets/:id", to: "bets#delete"
+
+  
 
 end

@@ -1,1 +1,10 @@
-Hello World! This is the user#index page!
+<h1> List of all Users </h1>
+<% @user.each do |user| %>
+<div class="row">
+  <div class="col s12" style="background: yellow">
+    <div>
+      <a href="/users/<%= user.id %>"><%= user.first_name %> <%= user.last_name %></a>
+    </div>
+  </div>
+</div>
+<% end %>

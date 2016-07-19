@@ -29,6 +29,7 @@
       <a href="/" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <% if current_user %>
+        <li><a href="/users">Find People</li>
         <li><a href="/bets">See All Bets</a></li>
         <li><a href="/newbet">Make A Bet!</a></li>
         <li><%= link_to "Log Out", logout_path, :method => :delete %></li>
@@ -39,6 +40,7 @@
       </ul>
       <ul class="side-nav" id="mobile-demo">
         <% if current_user %>
+        <li><a href="/users">Find People</li>
         <li><a href="/bets">See All Bets</a></li>
         <li><a href="/newbet">Make A Bet!</a></li>
         <li><%= link_to "Log Out", logout_path, :method => :delete %></li>
@@ -51,11 +53,6 @@
   </nav>
   <%= yield %>
 
-  <!-- Compiled and minified CSS -->
-
-  <!-- Compiled and minified JavaScript -->
-
-  <!--Import jQuery before materialize.js-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
