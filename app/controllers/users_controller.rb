@@ -30,21 +30,31 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @bet = @user.bets
+    @volunteer = @user.volunteers
     render :show
   end
 
   def edit
     @user = User.find(params[:id])
-    render :edit
+    if current_user == @user
+      render :edit
+    else
+      redirect_to splash_path
+    end
   end
 
   def update
     @user = User.find(params[:id])
-    @user.update(user_params)
-    if @user.save
-      redirect_to user_path(@user[:id])
+    if current_user == @user
+      @user.update(user_params)
+      if @user.save
+        redirect_to user_path(@user[:id])
+      else
+        redirect_to new_user_path
+      end
     else
-      redirect_to new_user_path
+      redirect_to splash_path
     end
   end
 

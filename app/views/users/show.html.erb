@@ -1,21 +1,51 @@
-</br></br><div class="container row showPage">
+<h4 style="text-align: center"> <%= @user.first_name %> <%= @user.last_name %> Profile! </h4>
+<div class="container row showPage">
   <div class="col s4 offset-s2">
     <img class = 'image' src="<%= @user.image_url %>" onerror="this.src='https://s31.postimg.org/88bcsumi3/IMG_5552.jpg';" width='150px'>
   </div>
   <div class="col s4">
+    <div>
+      <strong>Username: </strong><%= @user.user_name %>
+    </div>
+    <div>
+      <strong>First Name: </strong><%= @user.first_name %>
+    </div>
+    <div>
+      <strong>Last Name: </strong><%= @user.last_name %>
+    </div>
+    <div>
+      <strong>Email: </strong><%= @user.email %>
+    </div></br>
+    <% if current_user.id == @user.id %>
+    <div>
+      <button>
+        <a href='/users/<%= @user.id %>/edit' class="button-link">Edit Profile</a>
+      </button>
+    </div>
+    <% end %>
+  </div>
+</div>
 
-<div>
-  <strong>Username: </strong><%= @user.user_name %>
+<h4 style="text-align: center"> Bets Created </h4>
+<% @bet.each do |bet| %>
+<div class="container row showPage">
+  <div class="col s8 offset-s2">
+    Title: <a href="/bets/<%= bet.id %>"><%= bet.name %></a> </br>
+    Amount: $<%= bet.amount %> </br>
+    Description: <%= bet.description %> </br>
+    Bet Created By: <%= bet.user.first_name %> <%= bet.user.last_name %>
+  </div>
 </div>
-<div>
-  <strong>First Name: </strong><%= @user.first_name %>
-</div>
-<div>
-  <strong>Last Name: </strong><%= @user.last_name %>
-</div>
-<div>
-  <strong>Email: </strong><%= @user.email %>
-</div>
-</div>
+<% end %>
 
+<h4 style="text-align: center"> Bets Volunteered </h4>
+<% @volunteer.each do |volunteer| %>
+<div class="container row showPage">
+  <div class="col s8 offset-s2">
+    Title: <a href="/bets/<%= volunteer.bet.id %>"><%= volunteer.bet.name %></a></br>
+    Amount: $<%= volunteer.bet.amount %></br>
+    Description: <%= volunteer.bet.description %></br>
+    Bet Created By: <%= volunteer.bet.user.first_name %> <%= volunteer.bet.user.last_name %></br>
+  </div>
 </div>
+<% end %>
