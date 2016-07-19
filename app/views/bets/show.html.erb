@@ -17,3 +17,9 @@
 </div>
 
 <%= button_to "Delete Bet", bet_path(@bet.id), method: :delete %>
+
+<div>
+  <form action='/bets/<%= @bet.id %>/volunteers' method='post'>
+    <button> Volunteer! </button>
+  </form>
+</div>

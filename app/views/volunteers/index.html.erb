@@ -1,0 +1,16 @@
+Hello World! This is the volunteers#index
+<% @volunteer.each do |volunteer| %>
+<div class="row">
+  <div class="col s12" style="background: yellow">
+    <div class="col s6">
+      <%= volunteer.user.first_name %> <%= volunteer.user.last_name %>
+    </div>
+    <div class="col s6">
+      <%= button_to "Change your mind?",
+      { action: "delete", id: volunteer.id },
+        method: :delete, data: {confirm: "Are you sure?"} %>
+    </div>
+  </div>
+
+</div>
+<% end %>

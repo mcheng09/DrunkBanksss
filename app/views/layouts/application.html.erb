@@ -31,7 +31,7 @@
         <% if current_user %>
         <li><a href="/users">Find People</li>
         <li><a href="/bets">See All Bets</a></li>
-        <li><a href="/newbet">Make A Bet!</a></li>
+        <li><a href="/bets/new">Make A Bet!</a></li>
         <li><%= link_to "Log Out", logout_path, :method => :delete %></li>
         <% else %>
         <li><a href="/login">Login</a></li>
@@ -42,7 +42,7 @@
         <% if current_user %>
         <li><a href="/users">Find People</li>
         <li><a href="/bets">See All Bets</a></li>
-        <li><a href="/newbet">Make A Bet!</a></li>
+        <li><a href="/bets/new">Make A Bet!</a></li>
         <li><%= link_to "Log Out", logout_path, :method => :delete %></li>
         <% else %>
         <li><a href="/login">Login</a></li>

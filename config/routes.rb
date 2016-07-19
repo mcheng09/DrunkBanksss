@@ -18,14 +18,11 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#delete"
 
   # Bets Routes
-  get "/bets/:id", to: "bets#show", as: "bet"
-  get "/bets", to: "bets#index", as: "bets"
-  get "/newbet", to: "bets#new", as: "new_bet"
-  post "/bets", to: "bets#create"
-  get "/bets/:id/edit", to: "bets#edit", as: "edit_bet"
-  patch "/bets/:id", to: "bets#update"
-  delete "/bets/:id", to: "bets#delete"
-
-  
+  resources :bets do
+    get "/volunteers/:id", to: "volunteers#show", as: "volunteer"
+    get "/volunteers", to: "volunteers#index", as: "volunteers"
+    post "/volunteers", to: "volunteers#create"
+    delete "/volunteers/:id", to: "volunteers#delete"
+  end
 
 end
