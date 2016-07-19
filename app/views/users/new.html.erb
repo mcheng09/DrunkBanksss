@@ -2,41 +2,39 @@
 
 <div class="container row" style="color: black">
   <div class="col s6 offset-s3 newForm">
-<%= form_for @user do |f| %>
-<h4 style="text-align: center"> Sign up! </h4>
-<div>
-  <%= f.text_field :user_name, placeholder: "Username" %>
-</div>
 
-<div>
-  <%= f.text_field :first_name, placeholder: "First Name" %>
-</div>
+    <%= form_for @user do |f| %>
 
-<div>
-  <%= f.text_field :last_name, placeholder: "Last Name" %>
-</div>
+    <h4 style="text-align: center"> Sign up! </h4>
 
-<div>
-  <%= f.text_field :email, placeholder: "Email" %>
-</div>
+    <div>
+      <%= f.text_field :user_name, placeholder: "Username" %>
+    </div>
+    <div>
+      <%= f.text_field :first_name, placeholder: "First Name" %>
+    </div>
 
+    <div>
+      <%= f.text_field :last_name, placeholder: "Last Name" %>
+    </div>
 
+    <div>
+      <%= f.text_field :email, placeholder: "Email" %>
+    </div>
 
+    <div>
+      <%= f.password_field :password, placeholder: "Password" %>
+    </div>
 
-<div>
-  <%= f.password_field :password, placeholder: "Password" %>
-</div>
-
-<div>
-  <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
-</div>
-<div>
-<%= uploadcare_uploader_field :user, :image_url %>
-</div></br>
-<div>
-  <%= f.submit %>
-</div>
-
-<% end %>
-</div>
+    <div>
+      <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+    </div>
+    <div>
+      <%= uploadcare_uploader_field :user, :image_url %>
+    </div></br>
+    <div>
+      <%= f.submit %>
+    </div>
+    <% end %>
+  </div>
 </div>
