@@ -14,7 +14,14 @@
     </div>
     <div>
       <strong>Email: </strong><%= @user.email %>
+    </div></br>
+    <% if current_user.id == @user.id %>
+    <div>
+      <button>
+        <a href='/users/<%= @user.id %>/edit' class="button-link">Edit Profile</a>
+      </button>
     </div>
+    <% end %>
   </div>
 </div>
 
@@ -25,7 +32,7 @@
     Title: <%= bet.name %> </br>
     Amount: $<%= bet.amount %> </br>
     Description: <%= bet.description %> </br>
-    Bet by: <%= bet.user.first_name %> <%= bet.user.first_name %>
+    Bet by: <%= bet.user.first_name %> <%= bet.user.last_name %>
   </div>
 </div>
 <% end %>
