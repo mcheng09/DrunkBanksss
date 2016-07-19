@@ -1,6 +1,6 @@
 class Volunteer < ActiveRecord::Base
 
-  belongs_to :user
+  has_one :user, through: :bet
   belongs_to :bet
 
 end

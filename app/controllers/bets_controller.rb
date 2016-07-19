@@ -38,7 +38,7 @@ class BetsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @bet = Bet.find(params[:id])
     if @bet.destroy
       redirect_to bets_path
