@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   patch "/bets/:id", to: "bets#update"
   delete "/bets/:id", to: "bets#delete"
 
-  
+  # Volunteers Routes
+  get "/volunteers", to: "volunteers#index", as: "volunteers"
+  post "volunteers", to: "volunteers#create"
 
 end
