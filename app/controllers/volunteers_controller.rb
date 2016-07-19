@@ -1,7 +1,8 @@
 class VolunteersController < ApplicationController
 
   def index
-    @volunteer = Volunteer.all
+    @bet = Bet.find(params[:bet_id])
+    @volunteer = @bet.volunteers
     render :index
   end
 
