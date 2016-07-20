@@ -32,3 +32,7 @@ UPLOADCARE_LOCALE_TRANSLATIONS = {
     }
   }
 };
+
+$("#completebtn").click(function() {
+  $(volunteers).attr('complete', true)
+})

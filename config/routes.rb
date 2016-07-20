@@ -22,7 +22,10 @@ Rails.application.routes.draw do
     get "/volunteers/:id", to: "volunteers#show", as: "volunteer"
     get "/volunteers", to: "volunteers#index", as: "volunteers"
     post "/volunteers", to: "volunteers#create"
+
     delete "/volunteers/:id", to: "volunteers#delete"
   end
+
+  patch "/volunteers/:id", to: "volunteers#done", as: "edit_volunteer"
 
 end
