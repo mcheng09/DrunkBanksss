@@ -30,10 +30,10 @@
 <% @bet.each do |bet| %>
 <div class="container row showPage">
   <div class="col s8 offset-s2">
-    Title: <a href="/bets/<%= bet.id %>"><%= bet.name %></a> </br>
-    Amount: $<%= bet.amount %> </br>
-    Description: <%= bet.description %> </br>
-    Bet Created By: <%= bet.user.first_name %> <%= bet.user.last_name %>
+    <strong>Title: </strong><a href="/bets/<%= bet.id %>"><%= bet.name %></a> </br>
+    <strong>Amount: </strong>$<%= bet.amount %> </br>
+    <strong>Description: </strong><%= bet.description %> </br>
+    <strong>Bet Created By: </strong><%= bet.user.first_name %> <%= bet.user.last_name %>
   </div>
 </div>
 <% end %>
@@ -42,10 +42,12 @@
 <% @volunteer.each do |volunteer| %>
 <div class="container row showPage">
   <div class="col s8 offset-s2">
-    Title: <a href="/bets/<%= volunteer.bet.id %>"><%= volunteer.bet.name %></a></br>
-    Amount: $<%= volunteer.bet.amount %></br>
-    Description: <%= volunteer.bet.description %></br>
-    Bet Created By: <%= volunteer.bet.user.first_name %> <%= volunteer.bet.user.last_name %></br>
+    <strong>Title: </strong><a href="/bets/<%= volunteer.bet.id %>"><%= volunteer.bet.name %></a></br>
+    <strong>Amount: </strong>$<%= volunteer.bet.amount %></br>
+    <strong>Description: </strong><%= volunteer.bet.description %></br>
+    <strong>Bet Created By: </strong><%= volunteer.bet.user.first_name %> <%= volunteer.bet.user.last_name %></br>
   </div>
 </div>
 <% end %>
+
+<h4 style="text-align: center"> Bets Completed </h4>

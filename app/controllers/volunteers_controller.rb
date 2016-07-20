@@ -11,12 +11,15 @@ class VolunteersController < ApplicationController
     @bet = Bet.find(params[:bet_id])
     isvolunteer = false
     @bet.volunteers do |volunteer|
-      if volunteer.user == current_user
+      if current_user == volunteer.user
         isvolunteer = true
         break
       end
     end
-    if isvolunteer = false
+    if isvolunteer
+      flash[:error] = "You many not volunteer twice for the same bet."
+      redirect_to splash_path
+    else
       if current_user == @bet.user
         flash[:error] = "You may not volunteer for a bet you created."
         redirect_to splash_path
@@ -28,9 +31,6 @@ class VolunteersController < ApplicationController
           redirect_to volunteers_path
         end
       end
-    else
-      flash[:error] = "You suck!"
-      redirect_to splash_path
     end
   end
 
