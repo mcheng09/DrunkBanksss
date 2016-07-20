@@ -10,16 +10,23 @@
   <strong>Description: </strong><%= @bet.description %>
 </div>
 
+
+<% if current_user == @bet.user %>
 <div>
   <form action='/bets/<%= @bet.id %>/edit' method='get'>
     <button> Edit Bet </button>
   </form>
 </div>
-
 <%= button_to "Delete Bet", bet_path(@bet.id), method: :delete %>
+<% end %>
 
 <div>
   <form action='/bets/<%= @bet.id %>/volunteers' method='post'>
     <button> Volunteer! </button>
+  </form>
+</div>
+<div>
+  <form action='/bets/<%= @bet.id %>/volunteers' method='get'>
+    <button>See Volunteer List</button>
   </form>
 </div>
