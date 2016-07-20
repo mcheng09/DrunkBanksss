@@ -40,8 +40,28 @@
 
 <h4 style="text-align: center"> Bets Volunteered </h4>
 <% @volunteer.each do |volunteer| %>
+<% if volunteer.complete == false %>
 <div class="container row showPage">
-  <div class="col s8 offset-s2">
+  <div class="col s6">
+    <strong>Title: </strong><a href="/bets/<%= volunteer.bet.id %>"><%= volunteer.bet.name %></a></br>
+    <strong>Amount: </strong>$<%= volunteer.bet.amount %></br>
+    <strong>Description: </strong><%= volunteer.bet.description %></br>
+    <strong>Bet Created By: </strong><%= volunteer.bet.user.first_name %> <%= volunteer.bet.user.last_name %></br>
+  </div>
+  <div class="col s6">
+    <div>
+      <%= button_to "Completed!", edit_volunteer_path(volunteer.id), method: :patch %> 
+    </div>
+  </div>
+</div>
+<% end %>
+<% end %>
+
+<h4 style="text-align: center"> Bets Completed </h4>
+<% @volunteer.each do |volunteer| %>
+<% if volunteer.complete %>
+<div class="container row showPage">
+  <div class="col s6">
     <strong>Title: </strong><a href="/bets/<%= volunteer.bet.id %>"><%= volunteer.bet.name %></a></br>
     <strong>Amount: </strong>$<%= volunteer.bet.amount %></br>
     <strong>Description: </strong><%= volunteer.bet.description %></br>
@@ -49,5 +69,4 @@
   </div>
 </div>
 <% end %>
-
-<h4 style="text-align: center"> Bets Completed </h4>
+<% end %>

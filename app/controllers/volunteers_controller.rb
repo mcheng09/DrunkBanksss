@@ -10,12 +10,12 @@ class VolunteersController < ApplicationController
     @user = current_user
     @bet = Bet.find(params[:bet_id])
     isvolunteer = false
-    @bet.volunteers do |volunteer|
+    @bet.volunteers.each do |volunteer|
       if current_user == volunteer.user
         isvolunteer = true
-        break
       end
     end
+
     if isvolunteer
       flash[:error] = "You many not volunteer twice for the same bet."
       redirect_to splash_path
@@ -24,7 +24,7 @@ class VolunteersController < ApplicationController
         flash[:error] = "You may not volunteer for a bet you created."
         redirect_to splash_path
       else
-        @volunteer = Volunteer.new({user_id: @user[:id], bet_id: @bet[:id]})
+        @volunteer = Volunteer.new({user_id: @user[:id], bet_id: @bet[:id], complete: false})
         if @volunteer.save
           redirect_to bet_volunteers_path
         else
@@ -43,6 +43,13 @@ class VolunteersController < ApplicationController
     else
       redirect_to bet_path[@bet[:id]]
     end
+  end
+
+  def done
+    @user = current_user
+    @volunteer = Volunteer.find(params[:id])
+    @volunteer.update({complete: true})
+    redirect_to user_path(@user[:id])
   end
 
 end
