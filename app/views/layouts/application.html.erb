@@ -20,6 +20,14 @@
   <script>UPLOADCARE_PUBLIC_KEY = "b87de74d4f4e35f8c03e";</script>
   <script src="https://ucarecdn.com/widget/2.9.0/uploadcare/uploadcare.full.min.js" charset="utf-8"></script>
 
+  <!-- stripe.js -->
+  <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
+  <script type="text/javascript">
+  Stripe.setPublishableKey('pk_test_IfG0YxOGCXBsNi29aj9qqHFY');
+  </script>
+
+
 </head>
 
 <body>
@@ -51,7 +59,7 @@
       </ul>
     </div>
   </nav>
-  
+
   <% flash.each do |name, msg| %>
   <div class="errormsg">
     <%= msg %>
