@@ -1,16 +1,22 @@
-<h1> List of all Users </h1>
-<% @user.each do |user| %>
-<div class="row">
-  <div class="col s12" style="background: yellow">
-    <div class="col s2">
-      <img class = 'image' src="<%= user.image_url %>" onerror="this.src='https://s31.postimg.org/88bcsumi3/IMG_5552.jpg';" width='150px'>
-    </div>
-      <div class="col s4">
-      Username: <%= user.user_name %></br>
-      Name: <a href="/users/<%= user.id %>"><%= user.first_name %> <%= user.last_name %></a></br>
-      Email: <%= user.email %>
+</br></br>
 
+<div class="container row">
+  <div class="row">
+    <div class="col s8 offset-s2 showPage">
+      <h4 style="text-align: center"> List of all Users </h4><hr>
+      <% @user.each do |user| %>
+      <div class="row">
+          <div class="col s4 offset-s2">
+            <a href="/users/<%= user.id %>"><img class = 'image circle' src="<%= user.image_url %>" onerror="this.src='https://s31.postimg.org/88bcsumi3/IMG_5552.jpg';" width='150px'></a>
+          </div>
+          <div class="col s6"></br>
+            Username: <%= user.user_name %></br>
+            Name: <%= user.first_name %> <%= user.last_name %></br>
+            Email: <%= user.email %>
+
+          </div>
+      </div><hr>
+      <% end %>
     </div>
   </div>
 </div>
-<% end %>
