@@ -1,26 +1,24 @@
-
-New Bets
-
+</br></br>
 <div class="container row" style="color: black">
-  <div class="col s6 offset-s3 newForm">
-<%= form_for @bet do |f| %>
-<h4 style="text-align: center"> Place a bet! </h4>
-<div>
-  <%= f.text_field :name, placeholder: "Name" %>
-</div>
+  <div class="col s6 offset-s3 newForm" style="padding: 2%; margin-bottom: 2%">
+    <%= form_for @bet do |f| %>
+    <h4 style="text-align: center"> Place a bet! </h4>
+    <div>
+      <%= f.text_field :name, placeholder: "Name" %>
+    </div>
 
-<div>
-  <%= f.text_field :amount, placeholder: "Amount" %>
-</div>
+    <div>
+      <%= f.text_field :amount, placeholder: "Amount" %>
+    </div>
 
-<div>
-  <%= f.text_field :description, placeholder: "Description" %>
-</div>
+    <div>
+      <%= f.text_field :description, placeholder: "Description" %>
+    </div></br>
 
-<div>
-  <%= f.submit %>
-</div>
+    <div>
+      <%= f.submit 'Create Bet!', :class => 'btn waves-effect waves-light' %>
+    </div>
 
-<% end %>
-</div>
+    <% end %>
+  </div>
 </div>

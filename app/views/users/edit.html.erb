@@ -1,32 +1,33 @@
-Hello World! This is the users#edit
+</br></br>
 
+<div class="container row" style="color: black">
+  <div class="col s6 offset-s3 showPage" style="padding: 2%; margin-bottom: 2%">
+    <h4> Edit Profile </h4>
 <%= form_for @user do |f| %>
 <div>
-  <label>Username: </label>
+  <p style="color: darkred"> Username: </p>
   <%= f.text_field :user_name, placeholder: "Username" %>
 </div>
 
 <div>
-  <label>First Name: </label>
+  <p style="color: darkred"> First Name: </p>
   <%= f.text_field :first_name, placeholder: "First Name" %>
 </div>
 
 <div>
-  <label>Last Name: </label>
+  <p style="color: darkred"> Last Name: </p>
   <%= f.text_field :last_name, placeholder: "Last Name" %>
 </div>
 
 <div>
-  <label>Email: </label>
+  <p style="color: darkred"> Email: </p>
   <%= f.text_field :email, placeholder: "Email" %>
-</div>
+</div></br>
 
 <div>
-  <%= button_to "Update User Profile", user_path(@user.id), method: :update %>
-</div>
-
-<div>
-  <%= button_to "Delete User", splash_path, method: :delete %>
+  <%= button_to "Update Profile", user_path(@user.id), method: :update, class: "btn waves-effect waves-light" %>
 </div>
 
 <% end %>
+</div>
+</div>
