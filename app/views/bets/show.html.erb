@@ -1,32 +1,62 @@
+</br></br>
+
+<div class="container row">
+  <div class="row">
+    <div class="col s8 offset-s2 showPage" style="padding: 1%">
+
 <div>
-  <strong>Name: </strong><%= @bet.name %>
+  <h4 style="text-align: center"> <%= @bet.name %> </h4><hr>
 </div>
 
 <div>
-  <strong>Amount: </strong><%= @bet.amount %>
+  <strong style="font-size: 24px">Amount: </strong><%= @bet.amount %>
 </div>
 
 <div>
-  <strong>Description: </strong><%= @bet.description %>
+  <strong style="font-size: 20px">Description: </strong><%= @bet.description %>
 </div>
+
+<div>
+  <strong style="font-size: 20px"> Created by: </strong> <%= @bet.user.user_name %> 
+</div>
+</br></br>
 
 
 <% if current_user == @bet.user %>
-<div>
+<div class="row">
+<div class="col s4 offset-s2">
+  <div>
   <form action='/bets/<%= @bet.id %>/edit' method='get'>
-    <button> Edit Bet </button>
+    <button class="btn waves-effect waves-light"> Edit Bet </button>
   </form>
 </div>
-<%= button_to "Delete Bet", bet_path(@bet.id), method: :delete %>
+</div>
+<div class="col s6">
+<%= button_to "Delete Bet", bet_path(@bet.id), method: :delete, class: "btn waves-effect waves-light" %>
+</div>
+</div>
+<div class="col s4 offset-s4">
+  <form action='/bets/<%= @bet.id %>/volunteers' method='get'>
+    <button class="btn waves-effect waves-light">Volunteers</button>
+  </form>
+</div>
+<% else %>
+<div class="row">
+  <div class="col s4 offset-s2">
+
+    <form action='/bets/<%= @bet.id %>/volunteers' method='get'>
+      <button class="btn waves-effect waves-light">Volunteers</button>
+    </form>
+
+  </div>
+  <div>
+    <form action='/bets/<%= @bet.id %>/volunteers' method='post'>
+      <button class="btn waves-effect waves-light"> Sign Up! </button>
+    </form>
+  </div>
+  <div>
 <% end %>
 
-<div>
-  <form action='/bets/<%= @bet.id %>/volunteers' method='post'>
-    <button> Volunteer! </button>
-  </form>
+
 </div>
-<div>
-  <form action='/bets/<%= @bet.id %>/volunteers' method='get'>
-    <button>See Volunteer List</button>
-  </form>
 </div>
