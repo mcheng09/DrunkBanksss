@@ -12,7 +12,7 @@ DrunkBanks is a mobile-friendly app that can be used to make drunk bets with fri
 
 ### App Link
 
-Heroku App Link : [Will post up when deployed]
+Heroku App Link : https://drunkbank.herokuapp.com/
 
 ### Technologies:
 
