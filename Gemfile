@@ -35,6 +35,9 @@ gem 'uploadcare-rails'
 # Pry gem
 gem 'pry'
 
+# Stripe gem
+gem 'stripe'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

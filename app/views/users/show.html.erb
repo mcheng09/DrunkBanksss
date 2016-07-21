@@ -29,12 +29,27 @@
 <h4 style="text-align: center"> Bets Created </h4>
 <% @bet.each do |bet| %>
 <div class="container row showPage">
-  <div class="col s8 offset-s2">
+  <div class="col s6">
     <strong>Title: </strong><a href="/bets/<%= bet.id %>"><%= bet.name %></a> </br>
     <strong>Amount: </strong>$<%= bet.amount %> </br>
     <strong>Description: </strong><%= bet.description %> </br>
     <strong>Bet Created By: </strong><%= bet.user.first_name %> <%= bet.user.last_name %>
   </div>
+  <% if current_user.id == @user.id %>
+  <div class="col s6">
+    <form action="/charge" method="POST">
+      <script
+      src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key="pk_test_IfG0YxOGCXBsNi29aj9qqHFY"
+      data-amount="2000"
+      data-name="Demo Site"
+      data-description="2 widgets"
+      data-image="/img/documentation/checkout/marketplace.png"
+      data-locale="auto">
+      </script>
+    </form>
+  </div>
+  <% end %>
 </div>
 <% end %>
 
