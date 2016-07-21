@@ -1,19 +1,27 @@
-<h1> List of all Bets </h1>
-<% @bet.each do |bet| %>
-<div class="row">
-  <div class="col s12" style="background: yellow">
-<div>
-<a href="/bets/<%= bet.id %>"><%= bet.name %></a>
-</div>
-<div>
-$<%= bet.amount %>
-</div>
-<div>
-<%= bet.description %>
-</div>
-<div>
-  Created By: <%= bet.user.first_name %> <%= bet.user.last_name %>
-</div>
-</div>
-</div>
-<% end %>
+</br></br>
+
+<div class="container row">
+  <div class="row">
+    <div class="col s8 offset-s2 showPage">
+      <h4 style="text-align: center"> List of all Bets </h1><hr></br>
+        <% @bet.each do |bet| %>
+        <div class="row">
+          <div class="col s12">
+            <div>
+              <a href="/bets/<%= bet.id %>" style="font-size: 30px"><%= bet.name %></a>
+            </div>
+            <div>
+              <strong style="font-size: 20px">Amount:</strong> $<%= bet.amount %>
+            </div>
+            <div>
+              <strong style="font-size: 20px">Description:</strong> <%= bet.description %>
+            </div></br>
+            <div>
+              <strong style="font-size: 20px">Created By:</strong> <a href="/users/<%= bet.user.id %>" style="font-size: 24px"><%= bet.user.first_name %> <%= bet.user.last_name %></a>
+            </div>
+          </div>
+        </div><hr>
+        <% end %>
+      </div>
+    </div>
+  </div>
