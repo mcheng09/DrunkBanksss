@@ -1,9 +1,12 @@
-</br></br><div class="container row loginPage">
+</br></br>
 
-<h1> Login </h1>
-<%= form_tag "/login", method: "post" do %>
-<%= text_field_tag :user_name, nil, required: true, class: "formInput", placeholder: "Username" %></br>
-<%= password_field_tag :password, nil, required: true, class: "formInput", placeholder: "Password" %></br>
-<%= submit_tag "Login" %>
-<% end %>
+<div class="container row">
+  <div class="col s6 offset-s3 loginPage" style="padding: 2%">
+    <h4 style="text-align: center"> Login </h4>
+    <%= form_tag "/login", method: "post" do %>
+    <%= text_field_tag :user_name, nil, required: true, class: "formInput", placeholder: "Username" %></br>
+    <%= password_field_tag :password, nil, required: true, class: "formInput", placeholder: "Password" %></br></br>
+    <%= submit_tag "Login", :class => 'btn waves-effect waves-light' %>
+    <% end %>
+  </div>
 </div>

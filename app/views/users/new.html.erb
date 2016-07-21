@@ -1,7 +1,7 @@
 </br></br>
 
 <div class="container row" style="color: black">
-  <div class="col s6 offset-s3 newForm">
+  <div class="col s6 offset-s3 newForm" style="padding: 2%; margin-bottom: 2%">
 
     <%= form_for @user do |f| %>
 
@@ -33,8 +33,9 @@
       <%= uploadcare_uploader_field :user, :image_url %>
     </div></br>
     <div>
-      <%= f.submit %>
+      <%= f.submit 'Sign Up!', :class => 'btn waves-effect waves-light' %>
     </div>
     <% end %>
   </div>
 </div>
+</br>

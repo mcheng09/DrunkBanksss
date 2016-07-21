@@ -15,18 +15,25 @@
  */
 
  body {
-   /*background: url("http://calvinayre.com/wp-content/uploads/2016/06/poker-players-should-have-more-compassion-when-making-drunk-prop-bets.jpg");*/
+   background: url("http://calvinayre.com/wp-content/uploads/2016/06/poker-players-should-have-more-compassion-when-making-drunk-prop-bets.jpg");
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover;
    height: 600px;
  }
 
+ h4 {
+   font-family: 'Fjalla One', sans-serif;
+ }
+
+ p {
+   font-family: 'Cabin', sans-serif;
+ }
+
 .splashContent {
-  background: linear-gradient(bottom, rgba(128,128,128,.8), rgba(128,128,128,.8));
-  background: -webkit-linear-gradient(bottom, rgba(128,128,128,.8), rgba(128,128,128,.8));
+  background: linear-gradient(bottom, rgba(128,128,128,.85), rgba(128,128,128,.85));
+  background: -webkit-linear-gradient(bottom, rgba(128,128,128,.9), rgba(128,128,128,.9));
   border-radius: 24px;
-  padding: 2%;
 }
 
 .nav-wrapper {
@@ -36,8 +43,8 @@
 .newForm {
   padding: 5%;
   border-radius: 24px;
-  background: linear-gradient(bottom, rgba(128,128,128,.8), rgba(128,128,128,.8));
-  background: -webkit-linear-gradient(bottom, rgba(128,128,128,.8), rgba(128,128,128,.8));
+  background: linear-gradient(bottom, rgba(128,128,128,.9), rgba(128,128,128,.9));
+  background: -webkit-linear-gradient(bottom, rgba(128,128,128,.9), rgba(128,128,128,.9));
 }
 
 .loginPage{
@@ -57,6 +64,16 @@
   border-radius: 24px;
   background: linear-gradient(bottom, rgba(128,128,128,.8), rgba(128,128,128,.8));
   background: -webkit-linear-gradient(bottom, rgba(128,128,128,.8), rgba(128,128,128,.8));
+}
+
+footer.page-footer {
+  background: #292E37;
+  position:fixed;
+  height:50px;
+  bottom:0px;
+  left:0px;
+  right:0px;
+  margin-bottom:0px;
 }
 
 #pictext {
