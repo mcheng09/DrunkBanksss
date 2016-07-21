@@ -26,6 +26,10 @@ Rails.application.routes.draw do
     delete "/volunteers/:id", to: "volunteers#delete"
   end
 
+  # Volunteer Update Route for Completion
   patch "/volunteers/:id", to: "volunteers#done", as: "edit_volunteer"
+
+  # Stripe Routes
+  resources :charge
 
 end
